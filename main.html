@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+    body{
+        display: flex;
+        justify-content: center;
+        background-color: lightsalmon;
+    }
+        #container{
+            justify-content: center;
+            margin-top: 300px;
+
+        }
+    </style>
+</head>
+<body>
+   
+    <div id="container"> 
+    <div id="innerDiv">
+        <input type="text" id="data">
+        <input type="button" value="calculate" onclick="count()">
+    </div>
+    <div id="mydiv">
+
+    </div>
+
+    </div>
+    <script>
+        function count(){
+            var digitsCount=0 , alphCount=0;
+            let str=document.getElementById("data").value;
+            for(let i=0;i<str.length;i++){
+                if(str[i]>='1' && str[i]<='9'){
+                    digitsCount++;
+                }
+                if(str[i]>='A' && str[i]<='Z' || str[i]>='a' && str[i]<='z'){
+                    alphCount++;
+                }
+            }
+            document.getElementById("mydiv").innerHTML="Number is : " + digitsCount+ "<br> Alphbets is : "+alphCount;
+        }
+    </script>
+</body>
+</html>
